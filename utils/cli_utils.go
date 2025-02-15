@@ -21,8 +21,7 @@ func PrintBannerOnConsole() {
 	##     ##  ##  ##   ###  ##   ##  ##     ## ##          ##   
 	##     ## #### ##    ## #### #### ##     ## ##
     `))
-	fmt.Println(constants.StyledYellow("[+] MiniImp+ to Python compiler, built with ANTLRv4 and Go"))
-	fmt.Println(constants.StyledRed("[+] Programming Paradigms in Practice - DTEK0071-2025 - Ali Khan"))
+	fmt.Println(constants.StyledYellow("[+] MiniImp+ to Python source-to-source compiler, built with ANTLRv4 and Go"))
 	fmt.Println(constants.StyledYellow("------------------------------------------------------------------------"))
 }
 
