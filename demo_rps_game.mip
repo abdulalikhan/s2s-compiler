@@ -1,0 +1,51 @@
+
+program RPS_GAME begin
+  var KEEP_PLAYING = true;
+
+  while is KEEP_PLAYING true begin
+    var DRAW = false;
+    var WINNER_NAME;
+    var PLAYER1_NAME = read "Player 1, what is your name? ";
+    var PLAYER2_NAME = read "Player 2, what is your name? ";
+    write "Initiating game of rock, paper, scissors!"
+    write PLAYER1_NAME + " VERSUS " + PLAYER2_NAME;
+
+    write PLAYER1_NAME + " - Choose your gesture: ";
+    set PLAYER1_GESTURE = read "(rock, paper or scissors): ";
+    write PLAYER2_NAME + " - Choose your gesture: ";
+    set PLAYER2_GESTURE = read "(rock, paper or scissors): ";
+
+    if is PLAYER1_GESTURE "rock" and is PLAYER2_GESTURE "scissors"
+        or (is PLAYER1_GESTURE "paper" and is PLAYER2_GESTURE "rock")
+        or (is PLAYER1_GESTURE "scissors" and is PLAYER2_GESTURE "paper") then begin
+      set WINNER_NAME = PLAYER1_NAME;
+    end.
+    else begin
+      if is PLAYER2_GESTURE "rock" and is PLAYER1_GESTURE "scissors"
+          or (is PLAYER2_GESTURE "paper" and is PLAYER1_GESTURE "rock")
+          or (is PLAYER2_GESTURE "scissors" and is PLAYER1_GESTURE "paper") then
+      begin
+        set WINNER_NAME = PLAYER2_NAME;
+      end.
+      else begin
+        set DRAW = true;
+      end.
+    end.
+
+    if is DRAW true then begin
+      write "draw";
+    end.
+    else begin
+      write WINNER_NAME + " wins";
+    end.
+
+    set USER_RESPONSE = read "Would you like to play RPS again? (yes/no) ";
+    if is USER_RESPONSE "yes" then begin
+        set KEEP_PLAYING = true;
+    end.
+    else begin
+      set KEEP_PLAYING = false;
+    end.
+  end.
+
+end.
